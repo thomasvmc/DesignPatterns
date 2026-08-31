@@ -1,0 +1,14 @@
+/home/thomas/Documents/code/school/apps/StrategyPattern/bin/Debug/net10.0/StrategyPattern
+/home/thomas/Documents/code/school/apps/StrategyPattern/bin/Debug/net10.0/StrategyPattern.deps.json
+/home/thomas/Documents/code/school/apps/StrategyPattern/bin/Debug/net10.0/StrategyPattern.runtimeconfig.json
+/home/thomas/Documents/code/school/apps/StrategyPattern/bin/Debug/net10.0/StrategyPattern.dll
+/home/thomas/Documents/code/school/apps/StrategyPattern/bin/Debug/net10.0/StrategyPattern.pdb
+/home/thomas/Documents/code/school/apps/StrategyPattern/obj/Debug/net10.0/StrategyPattern.GeneratedMSBuildEditorConfig.editorconfig
+/home/thomas/Documents/code/school/apps/StrategyPattern/obj/Debug/net10.0/StrategyPattern.AssemblyInfoInputs.cache
+/home/thomas/Documents/code/school/apps/StrategyPattern/obj/Debug/net10.0/StrategyPattern.AssemblyInfo.cs
+/home/thomas/Documents/code/school/apps/StrategyPattern/obj/Debug/net10.0/StrategyPattern.csproj.CoreCompileInputs.cache
+/home/thomas/Documents/code/school/apps/StrategyPattern/obj/Debug/net10.0/StrategyPattern.dll
+/home/thomas/Documents/code/school/apps/StrategyPattern/obj/Debug/net10.0/refint/StrategyPattern.dll
+/home/thomas/Documents/code/school/apps/StrategyPattern/obj/Debug/net10.0/StrategyPattern.pdb
+/home/thomas/Documents/code/school/apps/StrategyPattern/obj/Debug/net10.0/StrategyPattern.genruntimeconfig.cache
+/home/thomas/Documents/code/school/apps/StrategyPattern/obj/Debug/net10.0/ref/StrategyPattern.dll
