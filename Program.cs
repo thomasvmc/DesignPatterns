@@ -19,6 +19,7 @@ namespace StrategyPattern
                 duck.PerformQuack();
                 duck.PerformFly();
                 duck.PerformSwim();
+                Console.WriteLine("");
             }
         }
     }

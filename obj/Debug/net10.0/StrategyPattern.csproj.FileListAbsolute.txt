@@ -12,3 +12,4 @@
 /home/thomas/Documents/code/school/apps/StrategyPattern/obj/Debug/net10.0/StrategyPattern.pdb
 /home/thomas/Documents/code/school/apps/StrategyPattern/obj/Debug/net10.0/StrategyPattern.genruntimeconfig.cache
 /home/thomas/Documents/code/school/apps/StrategyPattern/obj/Debug/net10.0/ref/StrategyPattern.dll
+/home/thomas/Documents/code/school/apps/StrategyPattern/obj/Debug/net10.0/StrategyPattern.sourcelink.json
