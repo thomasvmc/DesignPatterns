@@ -21,6 +21,9 @@ namespace StrategyPattern
                 duck.PerformSwim();
                 Console.WriteLine("");
             }
+            
+            redheadDuck.SetFlyBehavior(new FlyWithHead());
+            redheadDuck.PerformFly();
         }
     }
     

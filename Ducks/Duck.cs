@@ -6,9 +6,9 @@ namespace StrategyPattern.Ducks
 {
     internal abstract class Duck
     {
-        protected QuackBehavior QuackBehavior { get; init; }
-        protected FlyBehavior FlyBehavior { get; init; }
-        protected SwimBehavior SwimBehavior { get; init; }
+        protected QuackBehavior QuackBehavior { get; set; }
+        protected FlyBehavior FlyBehavior { get; set; }
+        protected SwimBehavior SwimBehavior { get; set; }
         public abstract void Display();
 
         public void PerformQuack()
@@ -24,6 +24,21 @@ namespace StrategyPattern.Ducks
         public void PerformSwim()
         {
             SwimBehavior.Swim();
+        }
+
+        public void SetFlyBehavior(FlyBehavior flyBehavior)
+        {
+            FlyBehavior = flyBehavior;
+        }
+
+        public void SetQuackBehavior(QuackBehavior quackBehavior)
+        {
+            QuackBehavior = quackBehavior;
+        }
+
+        public void SetSwimBehavior(SwimBehavior swimBehavior)
+        {
+            SwimBehavior = swimBehavior;
         }
     }
 }
