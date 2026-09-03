@@ -18,6 +18,7 @@ namespace ObserverPattern.Displays
         public StatisticsDisplay(Subject weatherData) 
         { 
             this.weatherData = weatherData;
+            weatherData.RegisterObserver(this);
         }
         public void Update(float temp, float humidity, float pressure)
         {
@@ -31,7 +32,7 @@ namespace ObserverPattern.Displays
 
         public void Display()
         {
-            Console.WriteLine("Temp " + sumTemperature / countUpdated + "°c (" + minTemp + " - " + maxTemp + ")");
+            Console.WriteLine("Avg temp " + sumTemperature / countUpdated + "°c (" + minTemp + " - " + maxTemp + ")");
         }
     }
 }
