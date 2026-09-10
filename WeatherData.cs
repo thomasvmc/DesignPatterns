@@ -32,6 +32,11 @@ namespace ObserverPattern
             if (observers.Contains(o)) observers.Remove(o);
         }
 
+        public List<Observer> GetObservers()
+        {
+            return observers;
+        }
+
         public void MeasurementChanged()
         {
             NotifyObservers();
