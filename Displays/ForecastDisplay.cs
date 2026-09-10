@@ -12,6 +12,8 @@ namespace ObserverPattern.Displays
         private float temperature;
         private float humidity;
         private Subject weatherData;
+        private List<float> tempHistory = new List<float>();
+        private List<float> tdHistory = new List<float>();
         public ForecastDisplay(Subject weatherData) 
         { 
             this.weatherData  = weatherData;
@@ -26,7 +28,30 @@ namespace ObserverPattern.Displays
 
         public void Display()
         {
-            // Print a forecast message based on the current temperature and humidity
+            float a = 17.27F;
+            float b = 237.7F;
+            float A = (float) (a * temperature / (b + temperature) + Math.Log(humidity / 100));
+            float Td = (float) (b * A) / (a - A); 
+            
+            tempHistory.Add(temperature);
+            tdHistory.Add(Td);
+
+            if (tdHistory.Count < 2)
+            {
+                Console.WriteLine("Not enough info for a forecast");
+                return;
+            }
+
+            float spread = temperature - Td;
+            
+            float totalChange = 0f;
+            for (int i = 1; i < tdHistory.Count; i++)
+            {
+                totalChange += (tdHistory[i] - tdHistory[i - 1]);
+            }
+
+            Console.WriteLine($"There will be a {Math.Clamp((int) Math.Round(100f - (spread * 8f) + totalChange / (tdHistory.Count - 1) * 20f), 0, 100)}% chance of rain");
+
         }
     }
 }
