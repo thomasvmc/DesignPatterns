@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ObserverPattern.util;
 
 namespace ObserverPattern.Displays
 {
@@ -28,10 +29,7 @@ namespace ObserverPattern.Displays
 
         public void Display()
         {
-            float a = 17.27F;
-            float b = 237.7F;
-            float A = (float) (a * temperature / (b + temperature) + Math.Log(humidity / 100));
-            float Td = (float) (b * A) / (a - A); 
+            float Td = DewPoint.GetDewPoint(temperature, humidity); 
             
             tempHistory.Add(temperature);
             tdHistory.Add(Td);
@@ -50,7 +48,7 @@ namespace ObserverPattern.Displays
                 totalChange += (tdHistory[i] - tdHistory[i - 1]);
             }
 
-            Console.WriteLine($"There will be a {Math.Clamp((int) Math.Round(100f - (spread * 8f) + totalChange / (tdHistory.Count - 1) * 20f), 0, 100)}% chance of rain");
+            Console.WriteLine($"Forecast: There will be a {Math.Clamp((int) Math.Round(100f - (spread * 8f) + totalChange / (tdHistory.Count - 1) * 20f), 0, 100)}% chance of rain");
 
         }
     }

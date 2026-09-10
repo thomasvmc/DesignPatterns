@@ -32,7 +32,7 @@ namespace ObserverPattern.Displays
 
         public void Display()
         {
-            Console.WriteLine($"Avg temp {sumTemperature / countUpdated}°c ({minTemp} - {maxTemp}");
+            Console.WriteLine($"Temp: Avg temp {sumTemperature / countUpdated}°c ({minTemp} - {maxTemp}");
         }
     }
 }

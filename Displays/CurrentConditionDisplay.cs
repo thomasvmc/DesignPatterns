@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ObserverPattern.util;
 
 namespace ObserverPattern.Displays
 {
@@ -26,10 +27,7 @@ namespace ObserverPattern.Displays
 
         public void Display()
         {
-            float a = 17.27F;
-            float b = 237.7F;
-            float A = (float) (a * temperature / (b + temperature) + Math.Log(humidity / 100));
-            float Td = (float) (b * A) / (a - A);
+            float Td = DewPoint.GetDewPoint(temperature, humidity);
             float spread = temperature - Td;
             
             int rainChance;
