@@ -18,6 +18,12 @@ namespace DecoratorPattern
             americano = new Water(americano);
             americano = new Water(americano);
             PrintBeverage(americano);
+            
+            Beverage caramelCappuccino = new Espresso();
+            caramelCappuccino = new Ice(caramelCappuccino);
+            caramelCappuccino = new SteamedMilk(caramelCappuccino);
+            caramelCappuccino = new CreamSyrup(caramelCappuccino);
+            PrintBeverage(caramelCappuccino);
         }
 
         static void PrintBeverage(Beverage beverage)
