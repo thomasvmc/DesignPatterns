@@ -8,11 +8,11 @@ namespace DecoratorPattern.Beverages
 {
     internal class Espresso : Beverage
     {
-        public Espresso(Beverage beverage = null)
+        public Espresso(Beverage? beverage = null)
         {
             description = "Espresso";
             this.baseBeverage = beverage;
-        
+            Cost = 1.99;
         }
         public override string GetDescription()
         {
@@ -21,14 +21,6 @@ namespace DecoratorPattern.Beverages
                 return baseBeverage.GetDescription() + ", " + description;
             }
             return description;
-        }
-        public override double cost()
-        {
-            if (baseBeverage != null)
-            {
-                return 1.99 + baseBeverage.cost();
-            }
-            return 1.99;
         }
     }
 }

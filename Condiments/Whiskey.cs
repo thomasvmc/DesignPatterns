@@ -11,7 +11,7 @@ internal class Whiskey : CondimentDecorator
 
     public override double cost()
     {
-        return 0.30 + baseBeverage.cost();
+        return 0.60 + baseBeverage.cost();
     }
 
     public override string GetDescription()
