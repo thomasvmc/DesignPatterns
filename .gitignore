@@ -1,0 +1,9 @@
+
+*.info
+*.dll
+*.pdb
+*.cache
+*.xml
+/obj/Debug
+/obj
+/bin
