@@ -24,6 +24,11 @@ namespace DecoratorPattern
             caramelCappuccino = new SteamedMilk(caramelCappuccino);
             caramelCappuccino = new CreamSyrup(caramelCappuccino);
             PrintBeverage(caramelCappuccino);
+            
+            Beverage darkRoastMochaWhip = new DarkRoast();
+            darkRoastMochaWhip = new Mocha(darkRoastMochaWhip);
+            darkRoastMochaWhip = new Whip(darkRoastMochaWhip);
+            PrintBeverage(darkRoastMochaWhip);
         }
 
         static void PrintBeverage(Beverage beverage)
