@@ -1,33 +1,18 @@
 ﻿using ObserverPattern.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ObserverPattern.util;
 
 namespace ObserverPattern.Displays
 {
-    internal class ForecastDisplay : Observer, DisplayElement
+    internal class ForecastDisplay : Display
     {
-        private float temperature;
-        private float humidity;
-        private Subject weatherData;
         private List<float> tempHistory = new List<float>();
         private List<float> tdHistory = new List<float>();
-        public ForecastDisplay(Subject weatherData) 
+        
+        public ForecastDisplay(Subject weatherData) : base(weatherData)
         { 
-            this.weatherData  = weatherData;
-            weatherData.RegisterObserver(this);
-        }
-        public void Update(float temp, float humidity, float pressure)
-        {
-            temperature = temp;
-            this.humidity = humidity;
-            Display();
         }
 
-        public void Display()
+        public override void Print()
         {
             float Td = DewPoint.GetDewPoint(temperature, humidity); 
             
@@ -48,8 +33,7 @@ namespace ObserverPattern.Displays
                 totalChange += (tdHistory[i] - tdHistory[i - 1]);
             }
 
-            Console.WriteLine($"Forecast: There will be a {Math.Clamp((int) Math.Round(100f - (spread * 8f) + totalChange / (tdHistory.Count - 1) * 20f), 0, 100)}% chance of rain");
-
+            Console.WriteLine($"Forecast: There will be a {Math.Clamp(Math.Round(100f - (spread * 8f) + totalChange / (tdHistory.Count - 1) * 20f), 0, 100)}% chance of rain");
         }
     }
 }

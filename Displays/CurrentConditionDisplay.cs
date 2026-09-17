@@ -8,27 +8,15 @@ using ObserverPattern.util;
 
 namespace ObserverPattern.Displays
 {
-    internal class CurrentConditionDisplay : Observer, DisplayElement
+    internal class CurrentConditionDisplay : Display
     {
-        private float temperature;
-        private float humidity;
-        private Subject weatherData;
-        public CurrentConditionDisplay(Subject weatherData) 
+        public CurrentConditionDisplay(Subject weatherData) :  base(weatherData)
         { 
-            this.weatherData = weatherData;
-            weatherData.RegisterObserver(this);
-        }
-        public void Update(float temp, float humidity, float pressure)
-        {
-            temperature = temp;
-            this.humidity = humidity;
-            Display();
         }
 
-        public void Display()
+        public override void Print()
         {
-            float Td = DewPoint.GetDewPoint(temperature, humidity);
-            float spread = temperature - Td;
+            float spread = temperature - DewPoint.GetDewPoint(temperature, humidity);
             
             int rainChance;
             if (spread <= 0.5F) {
