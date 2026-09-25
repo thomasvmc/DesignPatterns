@@ -7,11 +7,7 @@ internal class Ice : CondimentDecorator
     public Ice(Beverage beverage)
     {
         this.baseBeverage = beverage;
-    }
-
-    public override double cost()
-    {
-        return 0.05 + baseBeverage.cost();
+        Cost = 0.05;
     }
 
     public override string GetDescription()

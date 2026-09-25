@@ -7,11 +7,7 @@ internal class Honey :  Beverage
     public Honey(Beverage beverage)
     {
         this.baseBeverage = beverage;
-    }
-
-    public override double cost()
-    {
-        return 0.20 + baseBeverage.cost();
+        Cost = 0.25;
     }
 
     public override string GetDescription()

@@ -7,11 +7,7 @@ internal class Lemon : CondimentDecorator
     public Lemon(Beverage beverage)
     {
         this.baseBeverage = beverage;
-    }
-
-    public override double cost()
-    {
-        return 0.30 + baseBeverage.cost();
+        Cost = 0.30;
     }
 
     public override string GetDescription()

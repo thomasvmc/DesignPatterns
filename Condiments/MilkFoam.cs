@@ -7,11 +7,7 @@ internal class MilkFoam : CondimentDecorator
     public MilkFoam(Beverage beverage)
     {
         this.baseBeverage = beverage;
-    }
-
-    public override double cost()
-    {
-        return 0.35 + baseBeverage.cost();
+        Cost = 0.35;
     }
 
     public override string GetDescription()

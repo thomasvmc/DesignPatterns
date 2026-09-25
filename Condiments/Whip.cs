@@ -12,11 +12,7 @@ namespace DecoratorPattern.Condiments
         public Whip(Beverage beverage)
         {
             this.baseBeverage = beverage;
-        }
-
-        public override double cost()
-        {
-            return 0.10 + baseBeverage.cost();
+            Cost = 0.20;
         }
 
         public override string GetDescription()

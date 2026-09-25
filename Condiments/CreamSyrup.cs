@@ -7,11 +7,7 @@ internal class CreamSyrup : CondimentDecorator
     public CreamSyrup(Beverage beverage)
     {
         this.baseBeverage = beverage;
-    }
-
-    public override double cost()
-    {
-        return 0.49 + baseBeverage.cost();
+        Cost = 0.49;
     }
 
     public override string GetDescription()

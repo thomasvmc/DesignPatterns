@@ -7,11 +7,7 @@ internal class Chocolate : CondimentDecorator
     public Chocolate(Beverage beverage)
     {
         this.baseBeverage = beverage;
-    }
-
-    public override double cost()
-    {
-        return 0.45 + baseBeverage.cost();
+        Cost = 0.45;
     }
 
     public override string GetDescription()

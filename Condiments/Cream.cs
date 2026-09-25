@@ -7,11 +7,7 @@ internal class Cream :  Beverage
     public Cream(Beverage beverage)
     {
         this.baseBeverage = beverage;
-    }
-
-    public override double cost()
-    {
-        return 0.56 + baseBeverage.cost();
+        Cost = 0.56;
     }
 
     public override string GetDescription()

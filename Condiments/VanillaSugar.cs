@@ -7,11 +7,7 @@ internal class VanillaSugar : CondimentDecorator
     public VanillaSugar(Beverage beverage)
     {
         this.baseBeverage = beverage;
-    }
-
-    public override double cost()
-    {
-        return 0.35 + baseBeverage.cost();
+        Cost = 0.55;
     }
 
     public override string GetDescription()

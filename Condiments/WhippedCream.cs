@@ -7,11 +7,7 @@ internal class WhippedCream : CondimentDecorator
     public WhippedCream(Beverage beverage)
     {
         this.baseBeverage = beverage;
-    }
-
-    public override double cost()
-    {
-        return 0.65 + baseBeverage.cost();
+        Cost = 0.65;
     }
 
     public override string GetDescription()

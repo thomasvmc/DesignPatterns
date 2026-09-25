@@ -7,11 +7,7 @@ internal class Liquor : CondimentDecorator
     public Liquor(Beverage beverage)
     {
         this.baseBeverage = beverage;
-    }
-
-    public override double cost()
-    {
-        return 0.70 + baseBeverage.cost();
+        Cost = 0.70;
     }
 
     public override string GetDescription()

@@ -7,11 +7,7 @@ internal class HalfMilk :  Beverage
     public HalfMilk(Beverage beverage)
     {
         this.baseBeverage = beverage;
-    }
-
-    public override double cost()
-    {
-        return 0.27 + baseBeverage.cost();
+        Cost = 0.27;
     }
 
     public override string GetDescription()
