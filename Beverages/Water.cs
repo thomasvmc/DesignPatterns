@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DecoratorPattern.Beverages
 {
-    internal class Water : Beverage
+    internal class Water : BaseBeverage
     {
-        public Water(Beverage? beverage = null)
+        public Water(SizeEnum size, Beverage? beverage = null) : base(size, beverage)
         {
             description = "Water";
             this.baseBeverage = beverage ?? throw new ArgumentNullException(nameof(beverage));
-            Cost = 50;
+            Cost = 0.50;
         }
         
         public override string GetDescription()

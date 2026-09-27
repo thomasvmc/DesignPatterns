@@ -2,7 +2,7 @@ using DecoratorPattern.Beverages;
 
 namespace DecoratorPattern.Condiments;
 
-internal class HalfMilk :  Beverage
+internal class HalfMilk : CondimentDecorator
 {
     public HalfMilk(Beverage beverage)
     {

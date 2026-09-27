@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DecoratorPattern.Beverages
 {
-    internal class Decaf : Beverage
+    internal class Decaf : BaseBeverage
     {
-        public Decaf(Beverage? beverage = null)
+        public Decaf(SizeEnum? size, Beverage? beverage = null) : base(size, beverage)
         {
             description = "Decaf";
             this.baseBeverage = beverage;

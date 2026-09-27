@@ -1,8 +1,8 @@
 namespace DecoratorPattern.Beverages;
 
-internal class HouseBlend : Beverage
+internal class HouseBlend : BaseBeverage
 {
-    public HouseBlend(Beverage? beverage = null)
+    public HouseBlend(SizeEnum? size, Beverage? beverage = null) : base(size, beverage)
     {
         description = "House blend";
         this.baseBeverage = beverage;

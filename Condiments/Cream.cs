@@ -2,7 +2,7 @@ using DecoratorPattern.Beverages;
 
 namespace DecoratorPattern.Condiments;
 
-internal class Cream :  Beverage
+internal class Cream : CondimentDecorator
 {
     public Cream(Beverage beverage)
     {

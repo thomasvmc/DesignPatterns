@@ -2,7 +2,7 @@ using DecoratorPattern.Beverages;
 
 namespace DecoratorPattern.Condiments;
 
-internal class Honey :  Beverage
+internal class Honey : CondimentDecorator
 {
     public Honey(Beverage beverage)
     {

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DecoratorPattern.Beverages
 {
-    internal class Espresso : Beverage
+    internal class Espresso : BaseBeverage
     {
-        public Espresso(Beverage? beverage = null)
+        public Espresso(SizeEnum? size, Beverage? beverage = null) : base(size, beverage)
         {
             description = "Espresso";
             this.baseBeverage = beverage;

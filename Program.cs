@@ -14,7 +14,7 @@ namespace DecoratorPattern
             lungo = new Water(lungo);
             PrintBeverage(lungo);
 
-            Beverage americano = new Espresso();
+            Beverage americano = new Espresso(Size.TALL);
             americano = new Water(americano);
             americano = new Water(americano);
             PrintBeverage(americano);
