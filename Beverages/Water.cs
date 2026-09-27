@@ -8,7 +8,7 @@ namespace DecoratorPattern.Beverages
 {
     internal class Water : BaseBeverage
     {
-        public Water(SizeEnum size, Beverage? beverage = null) : base(size, beverage)
+        public Water(SizeEnum? size, Beverage? beverage = null) : base(size, beverage)
         {
             description = "Water";
             this.baseBeverage = beverage ?? throw new ArgumentNullException(nameof(beverage));
