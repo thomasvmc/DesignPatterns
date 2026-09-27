@@ -21,7 +21,8 @@ namespace DecoratorPattern.Beverages
                 {
                     SizeEnum.TALL => 20,
                     SizeEnum.GRANDE => 40,
-                    SizeEnum.VENDI => 60
+                    SizeEnum.VENDI => 60,
+                    _ => throw new ArgumentOutOfRangeException(nameof(size), size, null)
                 };
             }
         }

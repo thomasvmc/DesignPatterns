@@ -1,5 +1,6 @@
 ﻿using DecoratorPattern.Beverages;
 using DecoratorPattern.Condiments;
+using DecoratorPattern.Factory;
 
 namespace DecoratorPattern
 {
@@ -7,28 +8,21 @@ namespace DecoratorPattern
     {
         static void Main(string[] args)
         {
-            Beverage espresso = new Espresso(SizeEnum.GRANDE);
+            StarbuzzFactory starbuzzFactory = new StarbuzzFactory();
+            Beverage espresso = starbuzzFactory.CreateBeverage(BeverageType.ESPRESSO,  SizeEnum.GRANDE);
             PrintBeverage(espresso);
 
-            Beverage lungo = new Espresso(SizeEnum.VENDI);
-            lungo = new Water(null, lungo);
+            Beverage lungo = starbuzzFactory.CreateBeverage(BeverageType.LUNGO, SizeEnum.VENDI);
             PrintBeverage(lungo);
 
-            Beverage americano = new Espresso(SizeEnum.TALL);
-            americano = new Water(null, americano);
-            americano = new Water(null, americano);
+            Beverage americano = starbuzzFactory.CreateBeverage(BeverageType.AMERICANO, SizeEnum.TALL);
             PrintBeverage(americano);
+
+            Beverage morocchino = starbuzzFactory.CreateBeverage(BeverageType.MOROCCHINO, SizeEnum.GRANDE);
+            PrintBeverage(morocchino);
             
-            Beverage caramelCappuccino = new Espresso(SizeEnum.GRANDE);
-            caramelCappuccino = new Ice(caramelCappuccino);
-            caramelCappuccino = new SteamedMilk(caramelCappuccino);
-            caramelCappuccino = new CreamSyrup(caramelCappuccino);
-            PrintBeverage(caramelCappuccino);
-            
-            Beverage darkRoastMochaWhip = new DarkRoast(SizeEnum.GRANDE);
-            darkRoastMochaWhip = new Mocha(darkRoastMochaWhip);
-            darkRoastMochaWhip = new Whip(darkRoastMochaWhip);
-            PrintBeverage(darkRoastMochaWhip);
+            Beverage chocolateMilk = starbuzzFactory.CreateBeverage(BeverageType.CHOCOLATE_MILK, SizeEnum.TALL);
+            PrintBeverage(chocolateMilk);
         }
 
         static void PrintBeverage(Beverage beverage)

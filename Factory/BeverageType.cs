@@ -1,0 +1,34 @@
+namespace DecoratorPattern.Factory;
+
+public enum BeverageType
+{
+    ESPRESSO,
+    DOPPIO,
+    LUNGO,
+    MACCHIATO,
+    CORRETTA,
+    CON_PANNA,
+    CAPPUCINNO,
+    AMERICANO,
+    CAFFE_LATTE,
+    FLAT_WHITE,
+    ROMANA,
+    MOROCCHINO,
+    MOCHA,
+    BICERIN,
+    BREVE,
+    RAF_COFFEE,
+    MEAD_RAF,
+    GALAO,
+    CAFFE_AFFOGATO,
+    VIENNA_COFFEE,
+    GLACE,
+    CHOCOLATE_MILK,
+    DEMI_CREME,
+    LATTE_MACHIATO,
+    FREDDO,
+    FRAPPUCCINO,
+    CARAMEL_FRAPPUCCINO,
+    FRAPPE,
+    IRISH_COFFEE
+}
