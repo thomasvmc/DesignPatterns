@@ -8,7 +8,8 @@ namespace Singleton
 {
     internal class ChocolateBoiler
     {
-        private static ChocolateBoiler? chocolateBoiler;
+        private static readonly Lazy<ChocolateBoiler> lazyChocolateBoiler = new Lazy<ChocolateBoiler>(() => new ChocolateBoiler());
+        
         private bool empty;
         private bool boiled;
 
@@ -24,8 +25,7 @@ namespace Singleton
 
         public static ChocolateBoiler getInstance()
         {
-            if (chocolateBoiler == null) chocolateBoiler = new ChocolateBoiler();
-            return chocolateBoiler;
+            return lazyChocolateBoiler.Value;
         }
         
         // To fill the boiler it must be empty and once it is full, we set the empty and boiled flag
@@ -34,7 +34,6 @@ namespace Singleton
             if(empty)
             {
                 empty = false;
-                boiled = false;
             }
         }
         // To drain the boiler, it must be full (non empty) and also boiled.
@@ -44,6 +43,7 @@ namespace Singleton
             if(!empty && boiled)
             {
                 empty = true;
+                boiled = false;
             }
         }
         // To boil the mixture, the boiler has to be full and not already boiled.
