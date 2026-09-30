@@ -19,9 +19,9 @@ namespace DecoratorPattern.Beverages
                 this.size = (SizeEnum) size;
                 Cost += size switch
                 {
-                    SizeEnum.TALL => 20,
-                    SizeEnum.GRANDE => 40,
-                    SizeEnum.VENDI => 60,
+                    SizeEnum.TALL => 0.20,
+                    SizeEnum.GRANDE => 0.40,
+                    SizeEnum.VENDI => 0.60,
                     _ => throw new ArgumentOutOfRangeException(nameof(size), size, null)
                 };
             }
@@ -38,7 +38,7 @@ namespace DecoratorPattern.Beverages
 
         public virtual double cost()
         {
-            return baseBeverage?.cost() ?? 0 + Cost;
+            return (baseBeverage?.cost() ?? 0) + Cost;
         }
     }
 }

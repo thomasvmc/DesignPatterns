@@ -11,8 +11,8 @@ namespace DecoratorPattern.Beverages
         public Water(SizeEnum? size, Beverage? beverage = null) : base(size, beverage)
         {
             description = "Water";
-            this.baseBeverage = beverage ?? throw new ArgumentNullException(nameof(beverage));
-            Cost = 0.50;
+            this.baseBeverage = beverage;
+            Cost = 0.20;
         }
         
         public override string GetDescription()
