@@ -9,25 +9,11 @@ namespace DecoratorPattern
         static void Main(string[] args)
         {
             StarbuzzFactory starbuzzFactory = new StarbuzzFactory();
-            Beverage espresso = starbuzzFactory.CreateBeverage(BeverageType.ESPRESSO,  SizeEnum.GRANDE);
-            PrintBeverage(espresso);
-
-            Beverage lungo = starbuzzFactory.CreateBeverage(BeverageType.LUNGO, SizeEnum.VENDI);
-            PrintBeverage(lungo);
-
-            Beverage americano = starbuzzFactory.CreateBeverage(BeverageType.AMERICANO, SizeEnum.TALL);
-            PrintBeverage(americano);
-
-            Beverage morocchino = starbuzzFactory.CreateBeverage(BeverageType.MOROCCHINO, SizeEnum.GRANDE);
-            PrintBeverage(morocchino);
-            
-            Beverage chocolateMilk = starbuzzFactory.CreateBeverage(BeverageType.CHOCOLATE_MILK, SizeEnum.TALL);
-            PrintBeverage(chocolateMilk);
-        }
-
-        static void PrintBeverage(Beverage beverage)
-        {
-            Console.WriteLine(beverage.GetDescription() + " $" +  beverage.cost().ToString("#.##"));
+            Beverage espresso = starbuzzFactory.OrderDrink(BeverageType.ESPRESSO,  SizeEnum.GRANDE);
+            Beverage lungo = starbuzzFactory.OrderDrink(BeverageType.LUNGO, SizeEnum.VENDI);
+            Beverage americano = starbuzzFactory.OrderDrink(BeverageType.AMERICANO, SizeEnum.TALL);
+            Beverage morocchino = starbuzzFactory.OrderDrink(BeverageType.MOROCCHINO, SizeEnum.GRANDE);
+            Beverage chocolateMilk = starbuzzFactory.OrderDrink(BeverageType.CHOCOLATE_MILK, SizeEnum.TALL);
         }
     }
 }

@@ -5,7 +5,7 @@ namespace DecoratorPattern.Factory;
 
 internal class StarbuzzFactory : Factory
 {
-    public override Beverage CreateBeverage(BeverageType type, SizeEnum size)
+    private Beverage CreateBeverage(BeverageType type, SizeEnum size)
     {
         return type switch
         {
@@ -40,5 +40,18 @@ internal class StarbuzzFactory : Factory
             BeverageType.IRISH_COFFEE => new Whip(new Whiskey(new Espresso(null, new Espresso(size)))),
             _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
         };
+    }
+
+    public override Beverage OrderDrink(BeverageType type, SizeEnum size)
+    {
+        Beverage beverage = CreateBeverage(type, size);
+        PrintBeverage(beverage);
+        return beverage;
+    }
+    
+
+    private void PrintBeverage(Beverage beverage)
+    {
+        Console.WriteLine(beverage.GetDescription() + " $" +  beverage.cost().ToString("#.##"));
     }
 }
