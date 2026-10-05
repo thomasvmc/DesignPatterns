@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FacadePattern
+﻿namespace FacadePattern.TheaterComponents
 {
     internal class DvdPlayer
     {
@@ -16,35 +10,35 @@ namespace FacadePattern
 
         public void On()
         {
-
+            Console.WriteLine("Dvd player on");
         }
         public void Off()
         {
-
+            Console.WriteLine("Dvd player of");
         }
         public void Eject()
         {
-
+            Console.WriteLine("Dvd player ejecting disc");
         }
         public void Pause()
         {
-
+            Console.WriteLine("Dvd player paused");
         }
         public void Play(string movie)
         {
-
+            Console.WriteLine("Dvd player playing: " + movie);
         }
         public void SetSurroundAudio()
         {
-
+            Console.WriteLine("Dvd player set surround audio");
         }
         public void SetTWoChannelAudio()
         {
-
+            Console.WriteLine("Dvd player set two channel audio");
         }
         public void Stop()
         {
-
+            Console.WriteLine("Dvd player stopping");
         }
     }
 }

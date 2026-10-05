@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FacadePattern
+﻿namespace FacadePattern.TheaterComponents
 {
     internal class Projector
     {
@@ -20,22 +14,22 @@ namespace FacadePattern
 
         public void On()
         {
-
+            Console.WriteLine("Projector on");
         }
 
         public void Off()
         {
-
+            Console.WriteLine("Projector off");
         }
 
         public void TvMode()
         {
-
+            Console.WriteLine("Projector Tv mode");
         }
 
         public void WideScreenMode()
         {
-
+            Console.WriteLine("Projector Wide screen mode");
         }
     }
 }

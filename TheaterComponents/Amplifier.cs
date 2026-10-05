@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FacadePattern
+﻿namespace FacadePattern.TheaterComponents
 {
     internal class Amplifier
     {
@@ -14,12 +8,12 @@ namespace FacadePattern
 
         public void On()
         {
-
+            Console.WriteLine("Amplifier on");
         }
 
         public void Off()
         {
-
+            Console.WriteLine("Amplifier off");
         }
         public void SetCd(CdPlayer cdPlayer)
         {
@@ -31,11 +25,11 @@ namespace FacadePattern
         }
         public void SetStereoSound()
         {
-
+            Console.WriteLine("Amplifier set stereo sound");
         }
         public void SetSurroundSound()
         {
-
+            Console.WriteLine("Amplifier set surround sound");
         }
         public void SetTuner(Tuner tuner)
         {
@@ -43,8 +37,7 @@ namespace FacadePattern
         }
         public void SetVolume(int volume)
         {
-
+            Console.WriteLine("Amplifier set volume to:" + volume);
         }
-
     }
 }

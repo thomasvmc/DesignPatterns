@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FacadePattern
+﻿namespace FacadePattern.TheaterComponents
 {
     internal class CdPlayer
     {
@@ -16,27 +10,27 @@ namespace FacadePattern
 
         public void On()
         {
-
+            Console.WriteLine("Cd player on");
         }
         public void Off()
         {
-
+            Console.WriteLine("Cd player off");
         }
         public void Eject()
         {
-
+            Console.WriteLine("Cd player ejecting disc");
         }
         public void Pause()
         {
-
+            Console.WriteLine("Cd player paused");
         }
         public void Play()
         {
-
+            Console.WriteLine("Cd player playing...");
         }
         public void Stop()
         {
-
+            Console.WriteLine("Cd player stopped");
         }
     }
 }

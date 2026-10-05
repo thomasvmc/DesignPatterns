@@ -1,35 +1,59 @@
+using FacadePattern.TheaterComponents;
+
 namespace FacadePattern;
 
-public class HomeTheaterFascade
+internal class HomeTheaterFascade
 {
-    private static Lazy<Amplifier> amp = new (() => new Amplifier());
-    private static Lazy<CdPlayer> cdPlayer = new (() => new CdPlayer(amp.Value));
-    private static Lazy<DvdPlayer> dvdPlayer = new (() => new DvdPlayer(amp.Value));
-    private static Lazy<PopcornPopper> popcornPopper = new (() => new PopcornPopper());
-    private static Lazy<Projector> projector = new (() => new Projector());
-    private static Lazy<Screen> screen = new (() => new Screen());
-    private static Lazy<TheaterLights> lights = new (() => new TheaterLights());
-    private static Lazy<Tuner> tuner = new (() => new Tuner(amp.Value));
+    private Amplifier amp;
+    private CdPlayer cdPlayer;
+    private DvdPlayer dvdPlayer;
+    private PopcornPopper popcornPopper;
+    private Projector projector;
+    private Screen screen;
+    private TheaterLights lights;
+    private Tuner tuner;
+
+    public HomeTheaterFascade(Amplifier amp, CdPlayer cdPlayer, DvdPlayer dvdPlayer, PopcornPopper popcornPopper, Projector projector, Screen screen, TheaterLights lights, Tuner tuner)
+    {
+        this.amp = amp;
+        this.cdPlayer = cdPlayer;
+        this.dvdPlayer = dvdPlayer;
+        this.popcornPopper = popcornPopper;
+        this.projector = projector;
+        this.screen = screen;
+        this.lights = lights;
+        this.tuner = tuner;
+    }
 
     public void WatchMovie(string movie)
     {
-        popcornPopper.Value.On();
-        popcornPopper.Value.Pop();
+        popcornPopper.On();
+        popcornPopper.Pop();
 
-        lights.Value.Dim(10);
+        lights.Dim(10);
 
-        screen.Value.Down();
+        screen.Down();
 
-        projector.Value.On();
-        projector.Value.SetInput(dvdPlayer.Value);
-        projector.Value.WideScreenMode();
+        projector.On();
+        projector.SetInput(dvdPlayer);
+        projector.WideScreenMode();
 
-        amp.Value.On();
-        amp.Value.SetDvd(dvdPlayer.Value);
-        amp.Value.SetSurroundSound();
-        amp.Value.SetVolume(5);
+        amp.On();
+        amp.SetDvd(dvdPlayer);
+        amp.SetSurroundSound();
+        amp.SetVolume(5);
 
-        dvdPlayer.Value.On();
-        dvdPlayer.Value.Play(movie);
+        dvdPlayer.On();
+        dvdPlayer.Play(movie);
+    }
+
+    public void EndMovie()
+    {
+        popcornPopper.Off();
+        lights.Dim(100);
+        screen.Up();
+        projector.Off();
+        amp.Off();
+        dvdPlayer.Off();
     }
 }
