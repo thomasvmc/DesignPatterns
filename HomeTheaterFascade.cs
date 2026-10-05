@@ -10,9 +10,6 @@ public class HomeTheaterFascade
     private static Lazy<Screen> screen = new (() => new Screen());
     private static Lazy<TheaterLights> lights = new (() => new TheaterLights());
     private static Lazy<Tuner> tuner = new (() => new Tuner(amp.Value));
-    
-    public HomeTheaterFascade() {
-    }
 
     public void WatchMovie(string movie)
     {
