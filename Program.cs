@@ -1,39 +1,37 @@
-﻿using AdapterPattern.Interfaces;
-using AdapterPattern.Turkeys;
-using System;
-
-namespace AdapterPattern
+﻿namespace FacadePattern
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            // Let's make a duck and a turkey
-            MallardDuck duck = new MallardDuck();
-            WildTurkey turkey = new WildTurkey();
-            // Let's wrap the turkey in an adapter to make it look like a Duck
-            Duck turkeyAdapter = new TurkeyAdapter(turkey);
+            Amplifier amp = new Amplifier();
+            CdPlayer cdPlayer = new CdPlayer(amp);
+            DvdPlayer dvdPlayer = new DvdPlayer(amp);
+            PopcornPopper popcornPopper = new PopcornPopper();
+            Projector projector = new Projector();
+            Screen screen = new Screen();
+            TheaterLights lights = new TheaterLights();
+            Tuner tuner = new Tuner(amp);
 
-            // Testing the turkey.
-            Console.WriteLine("The Turkey says...");
-            turkey.Gobble();
-            turkey.Fly();
 
-            // Testing the duck with the testDuck() method, which expects a Duck object
-            Console.WriteLine("The Duck says...");
-            TestDuck(duck);
+            popcornPopper.On();
+            popcornPopper.Pop();
 
-            // Now let's test the turkey using the testDuck() method
-            // (which still expects a Duck object)
-            Console.WriteLine("The TurkeyAdapter says...");
-            TestDuck(turkeyAdapter);
-        }
+            lights.Dim(10);
 
-        // Method to get a duck to call its Quack() and Fly() methods
-        static void TestDuck(Duck duck)
-        {
-            duck.Quack();
-            duck.Fly();
+            screen.Down();
+
+            projector.On();
+            projector.SetInput(dvdPlayer);
+            projector.WideScreenMode();
+
+            amp.On();
+            amp.SetDvd(dvdPlayer);
+            amp.SetSurroundSound();
+            amp.SetVolume(5);
+
+            dvdPlayer.On();
+            dvdPlayer.Play("Die Hard");
         }
     }
 }
