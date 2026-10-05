@@ -12,26 +12,6 @@
             Screen screen = new Screen();
             TheaterLights lights = new TheaterLights();
             Tuner tuner = new Tuner(amp);
-
-
-            popcornPopper.On();
-            popcornPopper.Pop();
-
-            lights.Dim(10);
-
-            screen.Down();
-
-            projector.On();
-            projector.SetInput(dvdPlayer);
-            projector.WideScreenMode();
-
-            amp.On();
-            amp.SetDvd(dvdPlayer);
-            amp.SetSurroundSound();
-            amp.SetVolume(5);
-
-            dvdPlayer.On();
-            dvdPlayer.Play("Die Hard");
         }
     }
 }
