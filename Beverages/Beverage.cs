@@ -16,14 +16,7 @@ namespace DecoratorPattern.Beverages
         {
             if (size != null)
             {
-                this.size = (SizeEnum) size;
-                Cost += size switch
-                {
-                    SizeEnum.TALL => 0.20,
-                    SizeEnum.GRANDE => 0.40,
-                    SizeEnum.VENDI => 0.60,
-                    _ => throw new ArgumentOutOfRangeException(nameof(size), size, null)
-                };
+                this.size = size;
             }
         }
 
@@ -38,7 +31,18 @@ namespace DecoratorPattern.Beverages
 
         public virtual double cost()
         {
-            return (baseBeverage?.cost() ?? 0) + Cost;
+            return (baseBeverage?.cost() ?? 0) + Cost * sizeMultiplier(size ?? baseBeverage.size);
+        }
+
+        private static double sizeMultiplier(SizeEnum? size)
+        {
+            return size switch
+            {
+                SizeEnum.GRANDE => 1.25,
+                SizeEnum.VENDI => 1.50,
+                _ => 1
+            };
+            
         }
     }
 }
